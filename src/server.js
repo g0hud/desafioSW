@@ -1,8 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const planetRoutes = require("./routes/planetRoutes");
 
-require("dotenv").config();
+require("dotenv").config({
+  path: process.env.NODE_ENV === "dev" ? ".env.dev" : ".env",
+});
+
+const planetRoutes = require("./routes/planetRoutes");
 
 const app = express();
 
