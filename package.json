@@ -6,7 +6,9 @@
   "author": "gomeshud <hgf1@ifal.edu.br>",
   "license": "MIT",
   "scripts": {
-    "dev": "node src/server.js"
+    "test": "jest --env node",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "axios": "^0.21.1",

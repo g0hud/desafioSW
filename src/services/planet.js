@@ -4,7 +4,33 @@ const SWPlanet = require("./SWPlanet");
 class getOrSave {
   async getPlanetList() {
     const listPlanets = await Planet.find({});
-    return listPlanets;
+
+    if (listPlanets.length === 1) {
+      const planetObj1 = {
+        id: listPlanets[0]._id,
+        name: listPlanets[0].name,
+        climate: listPlanets[0].climate,
+        terrain: listPlanets[0].terrain,
+        films: listPlanets[0].films,
+      };
+
+      return planetObj1;
+    } else if (listPlanets.length >= 2) {
+      const planetArr = [];
+
+      for (let planet of listPlanets) {
+        const planetObj = {
+          id: planet._id,
+          nome: planet.name,
+          clima: planet.climate,
+          terreno: planet.terrain,
+        };
+
+        planetArr.push(planetObj);
+      }
+
+      return planetArr;
+    } else return null;
   }
 
   async getPlanet(planetNameOrID) {
@@ -46,7 +72,7 @@ class getOrSave {
 
       return planet;
     }
-    return { msg: "Invalid planet name, please seek knowledge" };
+    return null;
   }
 
   async destroyPlanet(planetObj) {
