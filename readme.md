@@ -59,7 +59,7 @@ planet:{
 
 Junto a esses dados, será salvo a quantidade de filmes em que apareceu.
 
-#### CASO o planeta não faça parte da da [SWAPI](https://swapi.dev/), será retornado ERRO.
+#### CASO o planeta não faça parte da [SWAPI](https://swapi.dev/), será retornado ERRO.
 
 #### Deletar um planeta por ID
 
