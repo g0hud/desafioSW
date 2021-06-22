@@ -24,6 +24,7 @@ class getOrSave {
           nome: planet.name,
           clima: planet.climate,
           terreno: planet.terrain,
+          films: planet.films,
         };
 
         planetArr.push(planetObj);
@@ -62,7 +63,7 @@ class getOrSave {
 
     if (validateSW) {
       const planetData = {
-        name: planetObj.name,
+        name: validateSW.name,
         climate: planetObj.climate,
         terrain: planetObj.terrain,
         films: validateSW.films.length,

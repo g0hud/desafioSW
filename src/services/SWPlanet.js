@@ -16,7 +16,7 @@ class Planet {
         atualPlanet = data.next;
 
         for (let planet of data.results) {
-          if (planetName === planet.name) {
+          if (planetName.toUpperCase() === planet.name.toUpperCase()) {
             return planet;
           }
         }

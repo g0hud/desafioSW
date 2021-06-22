@@ -7,7 +7,7 @@ class PlanetController {
     if (planets) {
       return res.status(200).json(planets);
     }
-    return res.status(400).json({ message: "That's no moon" });
+    return res.status(400).json({ message: "That's no moon." });
   }
 
   async getPlanet(req, res) {
@@ -17,7 +17,9 @@ class PlanetController {
     if (planetData) {
       return res.status(200).json(planetData);
     }
-    return res.status(404).json({ message: "Something wrong with the planet" });
+    return res
+      .status(404)
+      .json({ message: "Are something wrong with the planet." });
   }
 
   async storePlanet(req, res) {
@@ -34,7 +36,9 @@ class PlanetController {
         films: valid.films,
       });
     }
-    return res.status(400).json({ message: "Something wrong" });
+    return res
+      .status(400)
+      .json({ message: "Wait. Oh My! I can't find this planet." });
   }
 
   async destroyPlanet(req, res) {
@@ -42,9 +46,11 @@ class PlanetController {
     const destroyed = await planetService.destroyPlanet(planetID);
 
     if (destroyed) {
-      return res.status(204);
+      return res.status(200).json({ message: "Has been destroyed!" });
     }
-    return res.status(400);
+    return res
+      .status(400)
+      .json({ message: "Sorry, I can't blow this planet up!" });
   }
 }
 
