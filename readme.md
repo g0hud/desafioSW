@@ -8,7 +8,7 @@ Para baixar a API deverá seguir as instruções abaixo:
 
 ```bash
   git clone https://github.com/gomeshud/desafioSW.git
-  cd desafioSW-master
+  cd desafioSW
 ```
 
 ## Referências da API
